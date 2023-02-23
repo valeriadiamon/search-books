@@ -1,0 +1,96 @@
+:root {
+  --book-width:300px;
+  --book-height:450px;
+}
+  .container{
+    display: flex;    
+  }
+  .perspect{
+    perspective: 1000px;
+  }
+.book {
+  position: relative;
+  display: block;
+  width: var(--book-width);
+  height: var(--book-height);
+  margin: 5% auto;
+  box-shadow: 13px 13px 8px 0px rgba(151, 146, 153,0.6);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  margin: 2rem;
+}
+
+.book:hover {
+    transform: rotate3d(0,1,0,35deg);
+}
+
+.book > div,
+ .cover> div {
+  display: block;
+  position: absolute;
+}
+
+.book .cover {
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transition: transform .5s;
+  transform: translate3d(0,0,20px);
+  z-index: 10;
+}
+
+.book .cover > img{
+  width: var(--book-width);
+  height: var(--book-height);
+}
+
+.book .left-side{
+  width: 40px;
+  left: -20px;
+  height: var(--book-height);
+  background-color: rgb(234, 234, 234);
+  transform: rotate3d(0,1,0,-90deg);
+}
+
+.book .cover > div {
+  border-radius: 0 3px 3px 0;
+  box-shadow: 
+    inset 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+.book .cover:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: -1px;
+  width: 1px;
+}
+.book .cover:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10px;
+  bottom: 0;
+  width: 3px;
+  background: rgba(0,0,0,0.1);
+  box-shadow: 1px 0 3px rgba(255, 255, 255, 0.1);
+}
+.left-side h2 {
+  width: calc(var(--book-height) - 50px);
+  height: 40px;
+  color: #2b2b2b;
+  font-size: 15px;
+  line-height: 40px;
+  padding-right: 10px;
+  text-align: right;
+  transform-origin: 0 0;
+  transform: rotate(90deg) translateY(-40px);
+}
+
+.left-side h2 span:first-child {
+  font-weight: 400;
+  font-size: 13px;
+  padding-right: 20px;
+}
+.left-side h2 span:last-child{
+  font-family: acumin-pro, sans-serif;
+} 
