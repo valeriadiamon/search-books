@@ -2,9 +2,9 @@ import libroLogo from "../assets/libroLogo2.png"
 
 const Banner = () => {
   return (
-    <section class="flex-center">
+    <section className="flex-center">
         <img src={libroLogo} alt=""/>
-        <p class="principal">Tus libros favoritos</p>
+        <p className="principal">Tus libros favoritos</p>
     </section>
   )
 }

@@ -10,7 +10,7 @@ const Recommend = () => {
             <div className="perspect">
                 <div className="book">
                     <div className="cover">
-                        <img src={orgulloypre} alt />
+                        <img src={orgulloypre} alt="" />
                     </div>
                     <div className="left-side">
                         <h2><span></span></h2>
@@ -20,7 +20,7 @@ const Recommend = () => {
     <div className="perspect">
       <div className="book">
         <div className="cover">
-          <img src={elAmor} alt />
+          <img src={elAmor} alt="" />
         </div>
         <div className="left-side">
           <h2>
@@ -32,7 +32,7 @@ const Recommend = () => {
     <div className="perspect">
       <div className="book">
         <div className="cover">
-          <img src={elGato} alt />
+          <img src={elGato} alt="" />
         </div>
         <div className="left-side">
           <h2>

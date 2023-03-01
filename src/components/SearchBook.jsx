@@ -1,35 +1,16 @@
-import axios from "axios"
-import { useEffect, useState, useRef } from "react"
+import { useState, useRef } from "react"
+import useFetcher from "../hooks/useFetcher"
 import Book from "./Book"
 
 const SearchBook = () => {
-  const [book,getBook] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [query, setQuery] = useState('el amor')
+  const { book: consulta } = useFetcher(query)
   const inputVal = useRef()
-
-  const getBooks = async (query) => {
-    return await axios(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
-  }
-  //se debe declarar la funcion fuera del useEffect porque sino se renderiza muchas veces pero se manda a llamar dentro 
-  const getData = async (q) => {
-    try{
-      const {data : {items}} = await getBooks(q)
-      getBook(items)
-      setLoading(false)
-    }
-    catch(e){
-      console.log("error")
-    }
-  }
-
-  useEffect(() => {
-    //getData()
-  },[])
 
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(inputVal.current.value)
-    getData(inputVal.current.value)
+    setQuery(inputVal.current.value)
   }
   return (
     <div>
@@ -38,7 +19,7 @@ const SearchBook = () => {
         <button >Submit</button>
       </form>
 
-      {loading ? <p>Cargando...</p> : <Book data={book} />}
+      {consulta == null ? <p>Cargando...</p> : <Book data={consulta} />}
     </div>
   )
 }
