@@ -3,8 +3,8 @@
   --blue: #66b0b3;
   --georgian: 'Noto Sans Georgian', sans-serif;
   --abril-fatface: 'Abril Fatface', cursive;
-  --book-width:300px;
-  --book-height:450px;
+  --book-width:180px;
+  --book-height:250px;
   --medium-font: ;
 }
 body{
@@ -24,7 +24,7 @@ body{
   color: var(--pink);
   font-size: larger;
 }
-li>input{
+form>input{
   font-family: var(--georgian);
   font-size: medium;
   padding: 0.5rem;
@@ -78,6 +78,7 @@ li>input{
 /*Book style*/
 .container{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;    
 }
 .perspect{
