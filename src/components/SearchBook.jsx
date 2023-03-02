@@ -1,25 +1,27 @@
-import { useState, useRef } from "react"
-import useFetcher from "../hooks/useFetcher"
+import { useEffect, useState, useRef } from "react"
 import Book from "./Book"
+import useFetcher from "../hooks/useFetcher"
 
 const SearchBook = () => {
-  const [query, setQuery] = useState('el amor')
-  const { book: consulta } = useFetcher(query)
+  const [book, setBook] = useState("el gato que amaba")
   const inputVal = useRef()
+  const [ response ] = useFetcher(book)
+  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(inputVal.current.value)
-    setQuery(inputVal.current.value)
+    setBook(inputVal.current.value)
+    console.log(book)
   }
   return (
     <div>
-      <form onSubmit={handleSubmit} action="">
+      <form onSubmit={handleSubmit}>
         <input type="text" ref={inputVal}/>
         <button >Submit</button>
       </form>
 
-      {consulta == null ? <p>Cargando...</p> : <Book data={consulta} />}
+      {response == null ? <p>Cargando...</p> : <Book data={response} />}
     </div>
   )
 }
