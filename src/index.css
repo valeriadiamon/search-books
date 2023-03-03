@@ -169,6 +169,29 @@ padding-right: 20px;
 font-family: acumin-pro, sans-serif;
 } 
 
+/*-----Not found-----*/
+.flex-column{
+  flex-direction: column;
+}
+.center{
+  color: var(--blue);
+}
+.button-blue{
+  background-color: var(--blue);
+  font-family: var(--abril-fatface);
+  color: white;
+}
+
+/* -------Book description---------- */
+.book-title{
+  font-family: var(--abril-fatface);
+  color: var(--pink);
+}
+.cont{
+  margin: 5%;
+}
+
+
 @media (max-width:980px){
   :root{
       --book-width:200px;

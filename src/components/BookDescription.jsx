@@ -9,13 +9,13 @@ const BookDescription = () => {
   
   return (
     
-    <>
-    <h1>{response?.volumeInfo.title}</h1>
+    <div className="cont">
+    <h1 className="book-title">{response?.volumeInfo.title}</h1>
     <h3>{response?.volumeInfo.authors}</h3>
-    <img src={response?.volumeInfo.imageLinks?.thumbnail} alt="" />
+    <img style={{float:"left", marginRight:"5%"}} src={response?.volumeInfo.imageLinks?.thumbnail} alt="" />
     <p>{response?.volumeInfo.description}</p>
     <p> <b>Número de páginas: </b> {response?.volumeInfo.pageCount}</p>
-    </>
+    </div>
     
   )
 }
